@@ -33,6 +33,7 @@ const MiniCreatePost: FC<MiniCreatePostProps> = ({ session }) => {
           readOnly
           onClick={() => router.push(pathname + "/submit")}
           placeholder="Create Post"
+          
         />
 
         <Button
