@@ -71,7 +71,7 @@ const Editor: React.FC<EditorProps> = ({ subredditId }) => {
               uploader: {
                 async uploadByFile(file: File) {
                   const [res] = await uploadFiles({
-                    endpoint: "imageUploader",
+                    endpoint: 'imageUploader',
                     files: [file],
                   });
 
