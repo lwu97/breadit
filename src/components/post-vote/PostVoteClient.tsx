@@ -18,11 +18,11 @@ interface PostVoteClientProps {
   initialVote?: VoteType | null;
 }
 
-const PostVoteClient: FC<PostVoteClientProps>  = ({
+const PostVoteClient: FC<PostVoteClientProps> = ({
   postId,
   initialVotesAmt,
   initialVote,
-})=> {
+}) => {
   const { loginToast } = useCustomToast();
   const [votesAmt, setVotesAmt] = useState<number>(initialVotesAmt);
   const [currentVote, setCurrentVote] = useState(initialVote);
@@ -57,20 +57,21 @@ const PostVoteClient: FC<PostVoteClientProps>  = ({
       return toast({
         title: "Something went wrong",
         description: "Your vote was not registered, please try again",
-        variant: 'destructive'
+        variant: "destructive",
       });
     },
     onMutate: (type: VoteType) => {
-      if(currentVote === type) {
-        setCurrentVote(undefined)
-        if(type === 'UP') setVotesAmt((prev) => prev - 1)
-        else if(type === 'DOWN') setVotesAmt((prev) => prev + 1)
+      if (currentVote === type) {
+        setCurrentVote(undefined);
+        if (type === "UP") setVotesAmt((prev) => prev - 1);
+        else if (type === "DOWN") setVotesAmt((prev) => prev + 1);
       } else {
-        setCurrentVote(type)
-        if(type === 'UP') setVotesAmt((prev) => prev + (currentVote ? 2 : 1))
-        else if(type === 'DOWN') setVotesAmt((prev) => prev - (currentVote ? 2 : 1))
-    }
-    }
+        setCurrentVote(type);
+        if (type === "UP") setVotesAmt((prev) => prev + (currentVote ? 2 : 1));
+        else if (type === "DOWN")
+          setVotesAmt((prev) => prev - (currentVote ? 2 : 1));
+      }
+    },
   });
 
   return (
