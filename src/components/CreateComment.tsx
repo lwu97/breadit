@@ -30,7 +30,7 @@ const CreateComment: FC<CreateCommentProps> = ({postId, replyToId}) => {
       };
 
       const { data } = await axios.patch(
-        `/api/subreddit/post/comment/`,
+        `/api/subreddit/post/comment`,
         payload
       );
       return data;
@@ -81,6 +81,3 @@ const CreateComment: FC<CreateCommentProps> = ({postId, replyToId}) => {
 };
 
 export default CreateComment;
-function loginToast(): unknown {
-  throw new Error("Function not implemented.");
-}
