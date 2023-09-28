@@ -48,7 +48,7 @@ const PostComment: FC<PostCommentProps> = ({
         replyToId
       }
 
-      const {data} = await axios.patch(`/api/subreddit/post/comment`, payload)
+      const {data} = await axios.patch(`/api/subreddit/post/comment/`, payload)
       return data
     },
     onError: () => {
