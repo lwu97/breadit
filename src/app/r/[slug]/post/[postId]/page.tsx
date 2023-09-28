@@ -17,7 +17,7 @@ interface pageProps {
   };
 }
 
-export const dynamic = "force dynamic";
+export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 const page = async ({ params }: pageProps) => {
