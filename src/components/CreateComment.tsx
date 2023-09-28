@@ -30,7 +30,7 @@ const CreateComment: FC<CreateCommentProps> = ({postId, replyToId}) => {
       };
 
       const { data } = await axios.patch(
-        `/api/subreddit/post/comment`,
+        `/api/subreddit/post/comment/`,
         payload
       );
       return data;
